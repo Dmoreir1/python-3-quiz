@@ -4,13 +4,14 @@ def validate_file(file_path):
     file = open(file_path, 'r')
     list = []
     for user in users:
-        numbers = [0,1,2,3,4,5,6,7,8,9]
+
     with open("users.txt", 'r') as file:
-    for line in file:
-        user_data = line.strip().split(',')
-        print(line)
-        if numbers in user_data:
-            raise ValidationException(f"Invalid User Name: {user} ")
+        for line in file:
+            user_data = line.strip().split(',')
+            print(line)
+            numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+            if numbers in user_data:
+                raise ValidationException(f"Invalid User Name: {user} ")
         # else:
         #     print("true")
 
@@ -32,7 +33,7 @@ def validate_file(file_path):
 
 
 
-    file.close()
+
 
 def test():
     try:
